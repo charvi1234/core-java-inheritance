@@ -1,0 +1,52 @@
+/*
+A class called BankAccount with two integer members as number, balance and many methods has been defined:
+
+Method/Constructor                    Description   
+public BankAccount(int number, int bal)     constructs a BankAccount object with number and opening balance provided. 
+public void withdraw(int amt)         records the given withdrawl
+public void deposit(int amt)          records the given deposit
+public int getBalance()               returns current balance in INR
+
+Design a new class MinMaxAccount whose instances can be used in place of a BankAccount object but include new behavior of remembering the minimum and maximum balances ever recorded for the account.
+You should provide the same methods as the superclass, as well as the following new behavior:
+
+Method/Constructor                  Description   
+public MinMaxAccount(int number, int bal)    constructs a MinMaxAccount object using information in the Startup object s   
+public int getMin()                 returns minimum balance in INR
+public int getMax()                 returns maximum balance in INR
+*/
+class MinMaxAccount extends BankAccount 
+{
+  int min;
+  int max;
+  int a,b;
+  public MinMaxAccount(int n,int b)
+  {
+    super(n,b);
+    min = getBalance();
+    max = getBalance();
+  }
+  public void withdraw(int amt)
+  {
+  int balance2 = getBalance();
+  this.balance = balance2 - amt;
+  if(balance<min)
+  this.min = balance;
+  }
+  public void deposit(int amt)
+  {
+  int bal2 = getBalance();
+  this.balance = bal2 +amt;
+  if(balance>max)
+  this.max = balance;
+  }
+  public int getMin()
+  {
+  return this.min;
+  }
+  public int getMax()
+  {
+  return this.max;
+  }
+
+}
