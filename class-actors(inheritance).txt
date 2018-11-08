@@ -1,0 +1,45 @@
+/*
+Design a class Person and two sub classes Actor and Actress.
+Every Actor will have a name, color, number_of_eyes and debut_year associated with him or her.
+Supply each with a constructor that sets the Person data fields as described with given values and a method named toString() that returns a string that contains a complete description of the Actor.
+*/
+class Person
+{
+  String name;
+  String color;
+  int number_of_eyes;
+  int debut_year;
+  Person(String na,String col,int num,int debut)
+  {
+    name = na;
+    color = col;
+    number_of_eyes = num;
+    debut_year = debut;
+  }
+}
+class Actor extends Person
+{
+ public Actor(String a, String b,int n,int d)
+ {
+   super(a,b,n,d);
+ }
+ public String toString()
+ {
+ String str = new String();
+ str = "The person "+name+" is an Actor. He is "+color+" in color, has "+number_of_eyes+" eyes and debut in "+debut_year;
+ return str;
+ }
+}
+class Actress extends Person
+{
+ public Actress(String a, String b,int n,int d)
+ {
+   super(a,b,n,d);
+ }
+ public String toString()
+ {
+ String str = new String();
+ str = "The person "+name+" is an Actress. She is "+color+" in color, has "+number_of_eyes+" eyes and debut in "+debut_year;
+ return str;
+ }
+}
