@@ -1,0 +1,38 @@
+class Book extends Publication
+{
+  int count;
+  int pages;
+  String writer;
+  Book()
+  {
+  }
+  Book(String title,int price,int pages,String writer)
+  {
+    this.title = title;
+    this.price = price;
+    this.pages = pages;
+    this.writer = writer;
+  }
+  void putdata()
+  {
+   System.out.println("Book Title \""+title+"\", written by \""+writer+"\" has "+pages+" pages and of "+price+ " rupees."); 
+  }
+}
+class CD extends Publication
+{
+  int time;
+  int length;
+  CD()
+  {
+  }
+  CD(String title,int price,int length)
+  {
+  this.title = title;
+  this.price = price;
+  this.length = length;
+  }
+  void putdata()
+  {
+   System.out.println("CD Title \""+title+"\", is of "+length+" minutes length and of "+price+" rupees."); 
+  }
+}
