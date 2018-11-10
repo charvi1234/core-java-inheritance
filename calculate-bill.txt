@@ -1,3 +1,18 @@
+/*
+Develop two classes Bill and Cash, where Cash inherits Bill. Sample input and output are shown below:
+
+Sample Input 1:
+1000    //item_price
+100      //qty
+4        //notes of 2000
+0        //notes of 500
+0        //notes of 100
+0        //notes of 50
+10       //notes of 10
+
+Sample Output 1:
+Need to pay: 91900
+*/
 import java.util.Scanner;
 class Bill
 {
