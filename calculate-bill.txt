@@ -1,0 +1,39 @@
+import java.util.Scanner;
+class Bill
+{
+  int qty;
+  int price,bill;
+  Scanner scan = new Scanner(System.in);
+  public Bill()
+  {
+    qty = scan.nextInt();
+    price = scan.nextInt();
+    bill= qty*price;
+  }
+}
+
+class Cash extends Bill
+{
+ int cash,rem;
+ int v,w,x,y,z;
+ public Cash()
+ {
+   v = scan.nextInt();
+   w = scan.nextInt();
+   x = scan.nextInt();
+   y = scan.nextInt();
+   z = scan.nextInt();
+ }
+ void get_cash()
+ {
+   cash = 2000*v+500*w+100*x+50*y+10*z;
+   rem = bill-cash;
+ }
+ void display()
+ {
+   if(rem<0)
+   System.out.println("Clear");
+   else
+   System.out.println("Need to pay: "+rem);
+ }
+}
