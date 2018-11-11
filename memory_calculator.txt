@@ -1,3 +1,12 @@
+/*
+Calculator(int seed)   constructs a Calculator with given seed for random numbers
+boolean isPrime(int n)   returns true if n is prime
+int kthPrime(int k)   returns the kth prime (assumes k >= 1)
+int fib(int n)   returns the nth Fibonacci number (assumes n >= 1)
+int rand(int max)   returns a random value between 0 and max
+
+Define a new class called MemoryCalculator that can be used in place of a Calculator to speed up the prime computation. A MemoryCalculator object should behave just like a Calculator object except that it should guarantee that the value of kthPrime(k) is computed only once for any given value k. Your class should still rely on the Calculator class to compute each value for kthPrime(k). It is simply guaranteeing that the computation is not performed more than once for any particular value of k. The isPrime method calls kthPrime, so it does not need to be memoized. 
+*/
 class MemoryCalculator extends Calculator
 {
     int arr[]=new int[10];
