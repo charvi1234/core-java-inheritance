@@ -1,0 +1,100 @@
+import java.util.Scanner;
+class Writer
+{
+  private String name;
+  private String email;
+  private char gender;
+  private String mail;
+  Scanner scan = new Scanner(System.in);
+  public Writer()
+  {}
+  public Writer(String n,String e,char s)
+  {
+    name=n;
+    email=e;
+    gender=s;
+  }
+  public void getName()
+  {
+    this.name = scan.next();
+  }
+  public void getEmail()
+  {
+    mail = scan.next();
+  }
+  public void setEmail()
+  {
+    this.email=mail;
+  }
+  public void getGender()
+  {
+   this.gender = scan.next().charAt(0);  
+  }
+  public String toString()
+  {
+    String str= new String();
+    str="Writer[name="+name+",email="+email+",gender="+gender+"]";
+    return str;
+  }
+}
+class Book 
+{
+  String name;
+  Writer[] writer=new Writer[10];
+  double price;
+  int qty,len;
+  Scanner scan = new Scanner(System.in);  
+  public Book (String name, Writer[] writer, double price)
+  {
+    len=writer.length;
+    this.name=name;
+    int i;
+    for(i=0;i<writer.length;i++)
+      this.writer[i]=writer[i];
+    this.price=price;
+  }
+  public Book (String name, Writer[] writer, double price, int qty)
+  {
+    len=writer.length;
+    this.name=name;
+    int i;
+    for(i=0;i<writer.length;i++)
+      this.writer[i]=writer[i];
+    this.price=price;
+    this.qty=qty;
+  }
+  public String getName()
+  {
+    return this.name;
+  }
+  public double getPrice()
+  {
+    return this.price;
+  }
+  public void setPrice(double pr)
+  {
+    this.price=pr;
+  }
+  public int getQty()
+  {
+    return this.qty;
+  }
+  public void setQty(int qt)
+  {
+    this.qty=qt;
+  }
+  public String toString()
+  {
+    String str = new String();
+    str= "Book[name="+name+",Writers={";
+    for(int i=0;i<len;i++)
+    {
+      if(i<len-1)
+      str=str+writer[i].toString()+",";
+      else
+        str=str+writer[i].toString();
+    }
+      str=str+"},price="+price+",qty="+qty;
+    return str;
+  }
+}
