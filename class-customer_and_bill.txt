@@ -1,0 +1,94 @@
+import java.util.Scanner;
+class Customer
+{
+  public int id;
+  public String name;
+  public int discount;
+  public Customer()
+  {}
+  public Customer(int id,String name,int discount)
+  {
+    this.id=id;
+    this.name=name;
+    this.discount=discount;
+  }
+  public int getID()
+  {
+    return this.id;
+  }
+  public String getName()
+  {
+    return this.name;
+  }
+  public int getDiscount()
+  {
+    return this.discount;
+  }
+  public void setDiscount(int disc)
+  {
+    this.discount=disc;
+  }
+  public String toString()
+  {
+    String str =new String();
+    str=name+"("+id+")";
+    return str;
+  }
+}
+class Bill
+{
+  int id;
+  Customer c;
+  double amount;
+  Scanner scan = new Scanner(System.in);
+  public Bill()
+  {}
+  public Bill(int id,Customer customer,double amount)
+  {
+    this.id=id;
+    this.c=customer;
+    this.amount=amount;
+  }
+  public int getID()
+  {
+    return this.id;    
+  }
+  public Customer getCustomer()
+  {
+    c.id=c.getID();
+    c.name=c.getName();
+    c.discount=c.getDiscount();
+    return c;
+  }
+  public void setCustomer(Customer c1)
+  {
+    c.id=c1.id;
+    c.name=c1.name;
+    c.discount=c1.discount;
+  }
+  public double getAmount()
+  {
+    return this.amount;
+  }
+  public void setAmount(double amt)
+  {
+    this.amount=amt;
+  }
+  public int getCustomerID()
+  {
+    return c.id;
+  }
+  public String getCustomerName()
+  {
+    return c.name;
+  }
+  public int getCustomerDiscount()
+  {
+    return c.discount;
+  }
+  public double getFinalAmt()
+  {
+    this.amount=this.amount-((c.discount*0.01)*this.amount);
+    return this.amount;
+  }
+}
