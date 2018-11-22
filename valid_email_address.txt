@@ -1,0 +1,54 @@
+/*
+Check an email-id for following exceptions
+
+if id does not contain '@' OR
+if id does not contain '.' (dot) OR
+if no '.' (dot) appears after '@'
+catch the exception and print "Invalid" or "Valid" accordingly.
+*/
+
+import java.util.Scanner;
+// Other imports go here
+// Do NOT change the class name
+class Main
+{
+  public static void main(String[] args)
+  {
+    String id;
+    Scanner s1=new Scanner(System.in);
+    id=s1.nextLine();
+    int i,j;
+    int flag = 0;
+    char temp[] = id.toCharArray();
+    int len = id.length();
+    for(i = 0; i < len; i++)
+    {
+      if(temp[i] == '@')
+      {
+        break;
+      }
+    }
+    for(j = i+1; j < len; j++)
+    {
+      if(temp[j] == '.')
+      {
+        flag = 1;
+        break;
+      }
+    }
+    try
+    {
+      if(flag == 0)
+      {
+        System.out.println("Invalid");
+      }
+      else if(flag == 1)
+      {
+        System.out.println("Valid");
+      }
+    }
+    catch (Exception e)
+    {
+    }
+  }
+}
